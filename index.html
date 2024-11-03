@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 11 Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="taskbar">
+        <div class="start-button" onclick="toggleStartMenu()">Start</div>
+    </div>
+    <div class="start-menu" id="startMenu">
+        <div class="menu-header">Start Menu</div>
+        <div class="menu-items">
+            <div class="menu-item" onclick="openApp('notepad')">Notepad</div>
+            <div class="menu-item" onclick="openApp('calculator')">Calculator</div>
+            <div class="menu-item" onclick="closeStartMenu()">Close</div>
+        </div>
+    </div>
+    <div id="notepad" class="app-window" style="display:none;">
+        <div class="window-header">Notepad <span class="close-btn" onclick="closeApp('notepad')">X</span></div>
+        <textarea rows="10" cols="30" placeholder="Type here..."></textarea>
+    </div>
+    <div id="calculator" class="app-window" style="display:none;">
+        <div class="window-header">Calculator <span class="close-btn" onclick="closeApp('calculator')">X</span></div>
+        <div class="calculator-body">
+            <input type="text" id="calcInput" disabled>
+            <div class="calc-buttons">
+                <button onclick="appendToCalc('1')">1</button>
+                <button onclick="appendToCalc('2')">2</button>
+                <button onclick="appendToCalc('3')">3</button>
+                <button onclick="calculate()">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
